@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 def divisible_by_2(my_list=[]):
-    new_list = []
+    new_list = my_list.copy()
     for i in new_list:
         if i < 0:
             i = -i
         modulo = i % 2
         if modulo == 0:
-            new_list.append(True)
+            new_list[i] = True
         else:
-            new_list.appen(False)
+            new_list[i] = False
     return new_list
