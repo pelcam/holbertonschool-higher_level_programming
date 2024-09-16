@@ -29,7 +29,7 @@ class Square:
     def position(self):
         return self.__position
 
-    @size.setter
+    @position.setter
     def position(self, value):
         if (not isinstance(value, tuple) or len(value) != 2 or
                 not all(isinstance(a, int) and a >= 0 for a in value)):
