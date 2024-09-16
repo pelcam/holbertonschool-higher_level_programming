@@ -6,12 +6,12 @@ This module defining the Square class.
 
 class Square:
     """
-    A class used to represent a Square.
+    A class used to represent, and print a Square at a specified location.
     """
 
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
