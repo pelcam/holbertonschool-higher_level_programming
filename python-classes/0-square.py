@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-file for class Square
+This module defining the Square class.
 """
 
 
 class Square:
     """
-    class Square
+    A class used to represent a Square.
     """
 
     pass

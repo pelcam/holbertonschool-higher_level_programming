@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module defining the Square class
+This module defining the Square class.
 """
 
 
