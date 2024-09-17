@@ -10,9 +10,7 @@ class Rectangle:
     """
 
     number_of_instances = 0
-
-    def print_symbol(self, symbol='#'):
-        self.print_symbol = symbol
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         self.height = height
@@ -56,8 +54,6 @@ class Rectangle:
             return ""
         rectangle_str = "\n".join([str(self.print_symbol) * self.__width for y
                                   in range(self.__height)])
-        rectangle_str = "\n".join(["#" * self.__width for y in range
-                                  (self.__height)])
         return rectangle_str
 
     def __repr__(self):
