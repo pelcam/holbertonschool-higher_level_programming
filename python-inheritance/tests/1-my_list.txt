@@ -1,6 +1,6 @@
 >>> MyList = __import__('1-my_list').MyList
 
-# test 1: list random
+# Test 1: random list
 >>> my_list = MyList()
 >>> my_list.append(1)
 >>> my_list.append(4)
@@ -9,12 +9,11 @@
 >>> my_list.append(5)
 >>> print(my_list)
 [1, 4, 2, 3, 5]
-
 >>> my_list.print_sorted()
 >>> print(my_list)
 [1, 2, 3, 4, 5]
 
-# test 2: autre liste random
+# Test 2: another random list
 >>> my_list = MyList()
 >>> my_list.append(10)
 >>> my_list.append(7)
@@ -22,16 +21,25 @@
 >>> my_list.append(5)
 >>> print(my_list)
 [10, 7, 12, 5]
-
 >>> my_list.print_sorted()
 >>> print(my_list)
 [5, 7, 10, 12]
 
-# test 3: liste vide
+# Test 3: empty list
 >>> empty_list = MyList()
 >>> print(empty_list)
 []
-
 >>> empty_list.print_sorted()
 >>> print(empty_list)
 []
+
+# Test 4: list with strings
+>>> list_wstrings = MyList()
+>>> list_wstrings.append(6)
+>>> list_wstrings.append(27)
+>>> list_wstrings.append('one')
+>>> print(list_wstrings)
+TypeError
+>>> list_wstrings.print_sorted()
+>>> print(list_wstrings)
+TypeError
