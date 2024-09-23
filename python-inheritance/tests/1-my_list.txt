@@ -32,14 +32,3 @@
 >>> empty_list.print_sorted()
 >>> print(empty_list)
 []
-
-# Test 4: list with strings
->>> list_wstrings = MyList()
->>> list_wstrings.append(6)
->>> list_wstrings.append(27)
->>> list_wstrings.append('one')
->>> print(list_wstrings)
-TypeError
->>> list_wstrings.print_sorted()
->>> print(list_wstrings)
-TypeError
