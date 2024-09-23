@@ -1,34 +1,58 @@
 >>> MyList = __import__('1-my_list').MyList
 
 >>> my_list = MyList()
+>>> my_list.append(3)
 >>> my_list.append(1)
->>> my_list.append(4)
 >>> my_list.append(2)
 >>> my_list.append(3)
+>>> my_list.append(1)
+>>> print(my_list)
+[3, 1, 2, 3, 1]
+>>> my_list.print_sorted()
+>>> print(my_list)
+[1, 1, 2, 3, 3]
+
+>>> my_list = MyList()
+>>> my_list.append(-1)
+>>> my_list.append(-4)
+>>> my_list.append(2)
+>>> my_list.append(0)
+>>> print(my_list)
+[-1, -4, 2, 0]
+>>> my_list.print_sorted()
+>>> print(my_list)
+[-4, -1, 0, 2]
+
+>>> my_list = MyList()
+>>> my_list.append(42)
+>>> print(my_list)
+[42]
+>>> my_list.print_sorted()
+>>> print(my_list)
+[42]
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(4)
 >>> my_list.append(5)
 >>> print(my_list)
-[1, 4, 2, 3, 5]
+[1, 2, 3, 4, 5]
 
 >>> my_list.print_sorted()
 >>> print(my_list)
 [1, 2, 3, 4, 5]
 
 >>> my_list = MyList()
->>> my_list.append(10)
->>> my_list.append(7)
->>> my_list.append(12)
->>> my_list.append(5)
+>>> my_list.append(1)
+>>> my_list.append("two")
+>>> my_list.append(3)
 >>> print(my_list)
-[10, 7, 12, 5]
+[1, 'two', 3] # Si accepté, mais ce cas pourrait être invalidé selon les spécifications
 
->>> my_list.print_sorted()
+>>> my_list = MyList()
+>>> my_list.append(1.5)
+>>> my_list.append(3.2)
 >>> print(my_list)
-[5, 7, 10, 12]
-
->>> empty_list = MyList()
->>> print(empty_list)
-[]
-
->>> empty_list.print_sorted()
->>> print(empty_list)
-[]
+[1.5, 3.2] # Si accepté, mais ce cas pourrait être invalidé selon les spécifications
