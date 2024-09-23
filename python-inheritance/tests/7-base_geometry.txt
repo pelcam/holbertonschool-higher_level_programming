@@ -1,4 +1,4 @@
->>> BaseGeometry = __import__('module_name').BaseGeometry
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 # Test 1: Call area() method (should raise an Exception)
 >>> geom = BaseGeometry()
