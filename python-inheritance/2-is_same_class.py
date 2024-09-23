@@ -7,7 +7,8 @@ a given object is an instance of a given class
 
 def is_same_class(obj, a_class):
     """
-    function to check is the given object is an insatnce of the given class
+    function to check is the given object is
+    exactly an instance of the given class
     """
     if type(obj) == a_class:
         return True
