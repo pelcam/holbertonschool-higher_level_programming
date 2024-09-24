@@ -11,5 +11,5 @@ def is_same_class(obj, a_class):
     exactly an instance of the given class
     """
     if not isinstance(a_class, type):
-        return
+        pass
     return type(obj) == a_class
