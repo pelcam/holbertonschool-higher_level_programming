@@ -10,8 +10,3 @@ my_list.append(5)
 print(my_list)
 my_list.print_sorted()
 print(my_list)
-
-lw_string = MyList(['lightweight', 'buddy'])
-print(lw_string)
-lw_string.print_sorted()
-print(lw_string)
