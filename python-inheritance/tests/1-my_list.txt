@@ -32,3 +32,11 @@
 >>> empty_list.print_sorted()
 >>> print(empty_list)
 []
+
+# Test 4: list with string
+>>> lw_string = MyList(["lightweight", "buddy"])
+>>> print(lw_string)
+['lightweight', 'buddy']
+>>> lw_string.print_sorted()
+>>> print(lw_string)
+['buddy', 'lightweight']
