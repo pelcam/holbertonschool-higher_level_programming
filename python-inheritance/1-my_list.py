@@ -10,5 +10,4 @@ class MyList(list):
     """
 
     def print_sorted(self):
-        dup = self
-        dup.sort()
+        print(sorted(self))
