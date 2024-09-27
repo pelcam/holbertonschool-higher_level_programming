@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 Module containing the Animal abstract class and concrete Dog and Cat classes.
 """
@@ -13,9 +12,6 @@ class Animal(ABC):
 
     @abstractmethod
     def sound(self):
-        """
-        Method to be implemented by all subclasses to define the sound of the animal.
-        """
         pass
 
 
