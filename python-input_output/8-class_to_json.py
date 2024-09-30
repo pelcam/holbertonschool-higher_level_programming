@@ -11,8 +11,4 @@ def class_to_json(obj):
     with simple data structure for JSON serialization of an object.
     """
 
-    obj_dict = {}
-    for attr, value in obj.__dict__.items():
-        if isinstance(value, (str, int, float, bool, list, dict)):
-            obj_dict[attr] = value
-    return obj_dict
+    return obj.__dict__
