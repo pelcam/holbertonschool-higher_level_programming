@@ -2,7 +2,6 @@
 """
 Module with function for task 8.
 """
-import json
 
 
 def class_to_json(obj):
