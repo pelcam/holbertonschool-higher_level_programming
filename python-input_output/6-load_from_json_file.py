@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module with funciton for task 6.
+Module with function for task 6.
 """
 import json
 
@@ -11,5 +11,4 @@ def load_from_json_file(filename):
     """
 
     with open(filename, 'r', encoding="utf-8") as f:
-        x = f.read()
-    return json.loads(x)
+        return json.loads(f.read())
