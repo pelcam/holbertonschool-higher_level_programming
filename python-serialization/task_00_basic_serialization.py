@@ -1,19 +1,23 @@
 #!/usr/bin/python3
 """
-Module with the functions for task 0
+Module with function to serialize an deserialize data
 """
+from pickle import load, dump
 
 
 def serialize_and_save_to_file(data, filename):
     """
-    Function that serialize and save data to the specified file
+    This function serialize json data
     """
 
-    pass
+    with open(filename, "wb") as f:
+        dump(data, f)
+
 
 def load_and_deserialize(filename):
     """
-    Function that load and deserialize data from the specified file
+    This function deserialize json data
     """
 
-    pass
+    with open(filename, "rb") as f:
+        return load(f)
