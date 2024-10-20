@@ -9,6 +9,9 @@ import http.server
 
 
 class SimpleAPIHandler(http.server.BaseHTTPRequestHandler):
+    """
+    Class with method to handle GET requests
+    """
 
     def do_GET(self):
         if self.path == '/':
