@@ -1,1 +1,1 @@
-toto
+SHOW DATABASES;
