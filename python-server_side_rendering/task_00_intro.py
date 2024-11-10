@@ -1,28 +1,33 @@
 import os
 
+
 def generate_invitations(template, attendees):
     """
     Generates invitations for a list of attendees based on a given template.
     Each invitation is saved to a separate text file.
-    
+
     Parameters:
     template (str): The invitation template to be used.
     attendees (list): A list of dictionaries containing attendee details.
     """
-    
+
     # Validate inputs
     if not isinstance(template, str):
         raise ValueError("Invalid template: must be a string.")
-    
-    if not isinstance(attendees, list) or any(not isinstance(attendee, dict) for attendee in attendees):
+
+    if not isinstance(attendees, list) or any(
+        not isinstance(attendee, dict) for attendee in attendees
+    ):
         raise ValueError("Invalid attendees: must be a list of dictionaries.")
-    
+
     if not template.strip():
-        print("Warning: The template is empty. No invitations will be generated.")
+        print("Warning: The template is empty. No invitations\
+         will be generated.")
         return
 
     if not attendees:
-        print("Warning: No attendees provided. No invitations will be created.")
+        print("Warning: No attendees provided. No invitations\
+         will be created.")
         return
 
     # Process each attendee
@@ -33,7 +38,7 @@ def generate_invitations(template, attendees):
                 name=attendee.get("name", "N/A"),
                 event_title=attendee.get("event_title", "N/A"),
                 event_date=attendee.get("event_date", "N/A"),
-                event_location=attendee.get("event_location", "N/A")
+                event_location=attendee.get("event_location", "N/A"),
             )
 
             # Define the output file path
@@ -41,7 +46,8 @@ def generate_invitations(template, attendees):
 
             # Check if the file already exists
             if os.path.exists(output_filename):
-                print(f"Notice: '{output_filename}' already exists. Skipping file creation.")
+                print(f"Notice: '{output_filename}' already exists. "
+                      f"Skipping file creation.")
                 continue
 
             # Write the invitation to the file
@@ -50,4 +56,5 @@ def generate_invitations(template, attendees):
                 print(f"Success: Invitation written to '{output_filename}'.")
 
         except Exception as e:
-            print(f"Error: Failed to generate invitation for attendee {idx} - {e}")
+            print(f"Error: Failed to generate invitation for\
+             attendee {idx} - {e}")
