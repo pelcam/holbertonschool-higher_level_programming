@@ -1,60 +1,54 @@
 import os
 
-
 def generate_invitations(template, attendees):
-    """
-    Generates invitations for a list of attendees based on a given template.
-    Each invitation is saved to a separate text file.
 
-    Parameters:
-    template (str): The invitation template to be used.
-    attendees (list): A list of dictionaries containing attendee details.
-    """
-
-    # Validate inputs
     if not isinstance(template, str):
-        raise ValueError("Invalid template: must be a string.")
+        print("Template is not a string")
+        return
 
-    if not isinstance(attendees, list) or any(
-        not isinstance(attendee, dict) for attendee in attendees
-    ):
-        raise ValueError("Invalid attendees: must be a list of dictionaries.")
+    if not isinstance(attendees, list) or not all(
+            isinstance(item, dict) for item in attendees):
+        print("Attendees is not a list of dictionaries")
+        return
 
-    if not template.strip():
-        print("Warning: The template is empty. No invitations\
-         will be generated.")
+    if not template:
+        print("Template is empty, no output files generated.")
         return
 
     if not attendees:
-        print("Warning: No attendees provided. No invitations\
-         will be created.")
+        print("No data provided, no output files generated.")
         return
 
-    # Process each attendee
-    for idx, attendee in enumerate(attendees, start=1):
+    for index, attendee in enumerate(attendees, start=1):
         try:
-            # Create the invitation content by replacing placeholders
-            invitation = template.format(
-                name=attendee.get("name", "N/A"),
-                event_title=attendee.get("event_title", "N/A"),
-                event_date=attendee.get("event_date", "N/A"),
-                event_location=attendee.get("event_location", "N/A"),
-            )
+            # Create an invitation using the "template"
+            invitation = template
+            # Replace {name} in invitation with the value
+            # from the "name" key obtained through get in attendee
+            invitation = invitation.replace(
+                "{name}", attendee.get("name") or "N/A")
+            invitation = invitation.replace(
+                "{event_title}", attendee.get("event_title") or "N/A")
+            invitation = invitation.replace(
+                "{event_date}", attendee.get("event_date") or "N/A")
+            invitation = invitation.replace(
+                "{event_location}", attendee.get("event_location") or "N/A")
 
-            # Define the output file path
-            output_filename = f"invitation_{idx}.txt"
+            # Create the output file name
+            output_filename = f"output_{index}.txt"
 
-            # Check if the file already exists
+            # Check if the file exists
             if os.path.exists(output_filename):
-                print(f"Notice: '{output_filename}' already exists. "
-                      f"Skipping file creation.")
+                print(f"The file '{output_filename}' already exists, "
+                      "it will not be overwritten")
                 continue
 
-            # Write the invitation to the file
+            # Write to the file
             with open(output_filename, "w") as file:
                 file.write(invitation)
-                print(f"Success: Invitation written to '{output_filename}'.")
+                print(f"Invitation successfully written to "
+                      f"'{output_filename}'.")
 
         except Exception as e:
-            print(f"Error: Failed to generate invitation for\
-             attendee {idx} - {e}")
+            print(f"Error: An error occurred while generating "
+                  f"'{output_filename}': {e}")
